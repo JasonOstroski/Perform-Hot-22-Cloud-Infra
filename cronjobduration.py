@@ -20,17 +20,17 @@ print("Current time: " + now.strftime("%H%M"))
 print("Start simulation at: " + str(droptime) + " for " + str(duration) + " minutes")
 
 METRICS_DROP = [
-        {'id' : 'cpu.temperature', 'dims' : {'cpu' : 'cpu1'}, 'min' : 120, 'max' : 150 },
-        {'id' : 'cpu.temperature', 'dims' : {'cpu' : 'cpu2'}, 'min' : 120, 'max' : 150 },
-        {'id' : 'cpu.temperature', 'dims' : {'cpu' : 'cpu3'}, 'min' : 120, 'max' : 150 },
-        {'id' : 'cpu.temperature', 'dims' : {'cpu' : 'cpu4'}, 'min' : 120, 'max' : 150 }
+        {'id' : 'cron.duration', 'dims' : {'job' : 'job1'}, 'min' : 300, 'max' : 1000 },
+        {'id' : 'cron.duration', 'dims' : {'job' : 'job2'}, 'min' : 300, 'max' : 1000 },
+        {'id' : 'cron.duration', 'dims' : {'job' : 'job3'}, 'min' : 300, 'max' : 1000 },
+        {'id' : 'cron.duration', 'dims' : {'job' : 'job4'}, 'min' : 300, 'max' : 1000 }
     ]
 
 METRICS = [
-        {'id' : 'cpu.temperature', 'dims' : {'cpu' : 'cpu1'}, 'min' : 30, 'max' : 90 },
-        {'id' : 'cpu.temperature', 'dims' : {'cpu' : 'cpu2'}, 'min' : 30, 'max' : 90 },
-        {'id' : 'cpu.temperature', 'dims' : {'cpu' : 'cpu3'}, 'min' : 30, 'max' : 90 },
-        {'id' : 'cpu.temperature', 'dims' : {'cpu' : 'cpu4'}, 'min' : 30, 'max' : 90 }
+        {'id' : 'cron.duration', 'dims' : {'job' : 'job1'}, 'min' : 10, 'max' : 30 },
+        {'id' : 'cron.duration', 'dims' : {'job' : 'job2'}, 'min' : 10, 'max' : 30 },
+        {'id' : 'cron.duration', 'dims' : {'job' : 'job3'}, 'min' : 10, 'max' : 30 },
+        {'id' : 'cron.duration', 'dims' : {'job' : 'job4'}, 'min' : 10, 'max' : 30 }
     ]
 scheduler = sched.scheduler(time.time, time.sleep)
 
@@ -40,7 +40,7 @@ def genSeries():
     timenow = int(now.strftime("%H%M"))
     if (timenow > int(droptime)) and (timenow < (int(droptime) + duration)):
         CURR_METRICS=METRICS_DROP
-        print("Simulating high cpu temperature...")
+        print("Starting problem pattern...")
     else:
         CURR_METRICS=METRICS  
     for metric in CURR_METRICS:
