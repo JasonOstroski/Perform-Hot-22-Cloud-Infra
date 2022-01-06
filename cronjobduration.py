@@ -20,17 +20,17 @@ print("Current time: " + now.strftime("%H%M"))
 print("Start simulation at: " + str(droptime) + " for " + str(duration) + " minutes")
 
 METRICS_DROP = [
-        {'id' : 'cron.duration', 'dims' : {'job' : 'job1'}, 'min' : 300, 'max' : 1000 },
-        {'id' : 'cron.duration', 'dims' : {'job' : 'job2'}, 'min' : 300, 'max' : 1000 },
-        {'id' : 'cron.duration', 'dims' : {'job' : 'job3'}, 'min' : 300, 'max' : 1000 },
-        {'id' : 'cron.duration', 'dims' : {'job' : 'job4'}, 'min' : 300, 'max' : 1000 }
+        {'id' : 'cron.duration', 'dims' : {'job' : 'job1'}, 'min' : 8000, 'max' : 20000 },
+        {'id' : 'cron.duration', 'dims' : {'job' : 'job2'}, 'min' : 8000, 'max' : 20000 },
+        {'id' : 'cron.duration', 'dims' : {'job' : 'job3'}, 'min' : 8000, 'max' : 20000 },
+        {'id' : 'cron.duration', 'dims' : {'job' : 'job4'}, 'min' : 8000, 'max' : 20000 }
     ]
 
 METRICS = [
-        {'id' : 'cron.duration', 'dims' : {'job' : 'job1'}, 'min' : 10, 'max' : 30 },
-        {'id' : 'cron.duration', 'dims' : {'job' : 'job2'}, 'min' : 10, 'max' : 30 },
-        {'id' : 'cron.duration', 'dims' : {'job' : 'job3'}, 'min' : 10, 'max' : 30 },
-        {'id' : 'cron.duration', 'dims' : {'job' : 'job4'}, 'min' : 10, 'max' : 30 }
+        {'id' : 'cron.duration', 'dims' : {'job' : 'job1'}, 'min' : 300, 'max' : 800 },
+        {'id' : 'cron.duration', 'dims' : {'job' : 'job2'}, 'min' : 300, 'max' : 800 },
+        {'id' : 'cron.duration', 'dims' : {'job' : 'job3'}, 'min' : 300, 'max' : 800 },
+        {'id' : 'cron.duration', 'dims' : {'job' : 'job4'}, 'min' : 300, 'max' : 800 }
     ]
 scheduler = sched.scheduler(time.time, time.sleep)
 
