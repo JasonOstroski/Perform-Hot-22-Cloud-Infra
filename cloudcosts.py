@@ -23,29 +23,29 @@ print("Current time: " + str(timenow))
 print("Start simulation at: " + str(droptime) + " for " + str(duration) + " minutes")
 
 METRICS_DROP = [
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'east-us', 'team' : 'teamA'}, 'min' : 1000, 'max' : 5000 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'east-us-2', 'team' : 'teamB'}, 'min' : 2000, 'max' : 5000 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'central-us', 'team' : 'teamD'}, 'min' : 1000, 'max' : 5000 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'west-central-us', 'team' : 'teamE'}, 'min' : 2000, 'max' : 5000 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'west-us', 'team' : 'teamF'}, 'min' : 2000, 'max' : 5000 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'us-east-2', 'team' : 'teamA'}, 'min' : 1000, 'max' : 5000 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'us-east-1', 'team' : 'teamA'}, 'min' : 2000, 'max' : 5000 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'us-west-1', 'team' : 'teamB'}, 'min' : 1000, 'max' : 5000 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'us-west-2', 'team' : 'teamB'}, 'min' : 2000, 'max' : 5000 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'af-south-1', 'team' : 'teamC'}, 'min' : 1000, 'max' : 5000 }
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'Azure', 'region' : 'east-us', 'team' : 'teamA'}, 'min' : 1000, 'max' : 5000 },
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'Azure', 'region' : 'east-us-2', 'team' : 'teamB'}, 'min' : 2000, 'max' : 5000 },
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'Azure', 'region' : 'central-us', 'team' : 'teamD'}, 'min' : 1000, 'max' : 5000 },
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'Azure', 'region' : 'west-central-us', 'team' : 'teamE'}, 'min' : 2000, 'max' : 5000 },
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'Azure', 'region' : 'west-us', 'team' : 'teamF'}, 'min' : 2000, 'max' : 5000 },
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'AWS', 'region' : 'us-east-2', 'team' : 'teamA'}, 'min' : 1000, 'max' : 5000 },
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'AWS', 'region' : 'us-east-1', 'team' : 'teamA'}, 'min' : 2000, 'max' : 5000 },
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'AWS', 'region' : 'us-west-1', 'team' : 'teamB'}, 'min' : 1000, 'max' : 5000 },
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'AWS', 'region' : 'us-west-2', 'team' : 'teamB'}, 'min' : 2000, 'max' : 5000 },
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'AWS', 'region' : 'af-south-1', 'team' : 'teamC'}, 'min' : 1000, 'max' : 5000 }
     ]
 
 METRICS = [
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'east-us', 'team' : 'teamA'}, 'min' : 10, 'max' : 100 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'east-us-2', 'team' : 'teamB'}, 'min' : 50, 'max' : 100 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'central-us', 'team' : 'teamD'}, 'min' : 10, 'max' : 100},
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'west-central-us', 'team' : 'teamE'}, 'min' : 20, 'max' : 100 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'west-us', 'team' : 'teamF'}, 'min' : 40, 'max' : 100 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'us-east-2', 'team' : 'teamA'}, 'min' : 80, 'max' : 100 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'us-east-1', 'team' : 'teamA'}, 'min' : 70, 'max' : 100 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'us-west-1', 'team' : 'teamB'}, 'min' : 90, 'max' : 100 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'us-west-2', 'team' : 'teamB'}, 'min' : 70, 'max' : 100 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'af-south-1', 'team' : 'teamC'}, 'min' : 90, 'max' : 100 }
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'Azure', 'region' : 'east-us', 'team' : 'teamA'}, 'min' : 80, 'max' : 100 },
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'Azure', 'region' : 'east-us-2', 'team' : 'teamB'}, 'min' : 70, 'max' : 100 },
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'Azure', 'region' : 'central-us', 'team' : 'teamD'}, 'min' : 90, 'max' : 100},
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'Azure', 'region' : 'west-central-us', 'team' : 'teamE'}, 'min' : 90, 'max' : 100 },
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'Azure', 'region' : 'west-us', 'team' : 'teamF'}, 'min' : 40, 'max' : 100 },
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'AWS', 'region' : 'us-east-2', 'team' : 'teamA'}, 'min' : 10, 'max' : 100 },
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'AWS', 'region' : 'us-east-1', 'team' : 'teamA'}, 'min' : 50, 'max' : 100 },
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'AWS', 'region' : 'us-west-1', 'team' : 'teamB'}, 'min' : 10, 'max' : 100 },
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'AWS', 'region' : 'us-west-2', 'team' : 'teamB'}, 'min' : 70, 'max' : 100 },
+        {'id' : 'cloud.costestimate', 'dims' : {'provider' : 'AWS', 'region' : 'af-south-1', 'team' : 'teamC'}, 'min' : 20, 'max' : 100 }
     ]
 scheduler = sched.scheduler(time.time, time.sleep)
 
