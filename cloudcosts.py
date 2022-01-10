@@ -23,29 +23,29 @@ print("Current time: " + str(timenow))
 print("Start simulation at: " + str(droptime) + " for " + str(duration) + " minutes")
 
 METRICS_DROP = [
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'useast', 'city' : 'Charlotte', 'store' : 'shop1'}, 'min' : 100000, 'max' : 100000 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'useast', 'city' : 'Jacksonville', 'store' : 'shop2'}, 'min' : 50000, 'max' : 100000 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'useast', 'city' : 'Indianapolis', 'store' : 'shop3'}, 'min' : 10000, 'max' : 100000 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'useast', 'city' : 'Columbus', 'store' : 'shop4'}, 'min' : 20000, 'max' : 100000 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'useast', 'city' : 'NewYork', 'store' : 'shop5'}, 'min' : 40000, 'max' : 100000 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'uswest', 'city' : 'SanFrancisco', 'store' : 'shop6'}, 'min' : 80000, 'max' : 100000 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'uswest', 'city' : 'Seatle', 'store' : 'shop7'}, 'min' : 70000, 'max' : 100000 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'uswest', 'city' : 'SanDiego', 'store' : 'shop8'}, 'min' : 90000, 'max' : 100000 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'uswest', 'city' : 'Portland', 'store' : 'shop9'}, 'min' : 70000, 'max' : 100000 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'uswest', 'city' : 'Anaheim', 'store' : 'shop10'}, 'min' : 90000, 'max' : 100000 }
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'east-us', 'team' : 'teamA'}, 'min' : 1000, 'max' : 5000 },
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'east-us-2', 'team' : 'teamB'}, 'min' : 2000, 'max' : 5000 },
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'central-us', 'team' : 'teamD'}, 'min' : 1000, 'max' : 5000 },
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'west-central-us', 'team' : 'teamE'}, 'min' : 2000, 'max' : 5000 },
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'west-us', 'team' : 'teamF'}, 'min' : 2000, 'max' : 5000 },
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'us-east-2', 'team' : 'teamA'}, 'min' : 1000, 'max' : 5000 },
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'us-east-1', 'team' : 'teamA'}, 'min' : 2000, 'max' : 5000 },
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'us-west-1', 'team' : 'teamB'}, 'min' : 1000, 'max' : 5000 },
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'us-west-2', 'team' : 'teamB'}, 'min' : 2000, 'max' : 5000 },
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'af-south-1', 'team' : 'teamC'}, 'min' : 1000, 'max' : 5000 }
     ]
 
 METRICS = [
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'useast', 'city' : 'Charlotte', 'store' : 'shop1'}, 'min' : 10, 'max' : 800 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'useast', 'city' : 'Jacksonville', 'store' : 'shop2'}, 'min' : 5, 'max' : 900 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'useast', 'city' : 'Indianapolis', 'store' : 'shop3'}, 'min' : 15, 'max' : 940 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'useast', 'city' : 'Columbus', 'store' : 'shop4'}, 'min' : 20, 'max' : 700 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'useast', 'city' : 'NewYork', 'store' : 'shop5'}, 'min' : 40, 'max' : 900 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'uswest', 'city' : 'SanFrancisco', 'store' : 'shop6'}, 'min' : 80, 'max' : 1200 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'uswest', 'city' : 'Seatle', 'store' : 'shop7'}, 'min' : 70, 'max' : 1300 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'uswest', 'city' : 'SanDiego', 'store' : 'shop8'}, 'min' : 90, 'max' : 1400 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'uswest', 'city' : 'Portland', 'store' : 'shop9'}, 'min' : 77, 'max' : 1500 },
-        {'id' : 'retail.shop.responsetime', 'dims' : {'country' : 'us', 'region' : 'uswest', 'city' : 'Anaheim', 'store' : 'shop10'}, 'min' : 95, 'max' : 1100 }
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'east-us', 'team' : 'teamA'}, 'min' : 10, 'max' : 100 },
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'east-us-2', 'team' : 'teamB'}, 'min' : 50, 'max' : 100 },
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'central-us', 'team' : 'teamD'}, 'min' : 10, 'max' : 100},
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'west-central-us', 'team' : 'teamE'}, 'min' : 20, 'max' : 100 },
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'Azure', 'region' : 'west-us', 'team' : 'teamF'}, 'min' : 40, 'max' : 100 },
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'us-east-2', 'team' : 'teamA'}, 'min' : 80, 'max' : 100 },
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'us-east-1', 'team' : 'teamA'}, 'min' : 70, 'max' : 100 },
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'us-west-1', 'team' : 'teamB'}, 'min' : 90, 'max' : 100 },
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'us-west-2', 'team' : 'teamB'}, 'min' : 70, 'max' : 100 },
+        {'id' : 'retail.shop.responsetime', 'dims' : {'provider' : 'AWS', 'region' : 'af-south-1', 'team' : 'teamC'}, 'min' : 90, 'max' : 100 }
     ]
 scheduler = sched.scheduler(time.time, time.sleep)
 
@@ -55,7 +55,7 @@ def genSeries():
     timenow = int(now.strftime("%H%M"))
     if (timenow > int(droptime)) and (timenow < (int(droptime) + duration)):
         CURR_METRICS=METRICS_DROP
-        print("Simulating response time increase...")
+        print("Simulating cost increase...")
     else:
         CURR_METRICS=METRICS  
     for metric in CURR_METRICS:
