@@ -1,0 +1,803 @@
+{
+	"info": {
+		"_postman_id": "67d7aaa1-384e-4bab-b8e6-6a02db846bbb",
+		"name": "Perform HOT 2022",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1.All - metrics (API v2)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/metrics",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"metrics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.API v2 - fields MetricID&AgregationTypes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/metrics?fields=metricId,aggregationTypes",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"metrics"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "metricId,aggregationTypes"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.API v2 - fields Metric&dimension",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/metrics?metricSelector=builtin:host.cpu.*&fields=metricId,dimensionDefinitions",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"metrics"
+					],
+					"query": [
+						{
+							"key": "metricSelector",
+							"value": "builtin:host.cpu.*"
+						},
+						{
+							"key": "fields",
+							"value": "metricId,dimensionDefinitions"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4.API v2 - cpu usage",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/metrics/builtin:host.cpu.usage",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"metrics",
+						"builtin:host.cpu.usage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5.API v2 - cpu system&user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/metrics?metricSelector=builtin:host.cpu.system,builtin:host.cpu.user",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"metrics"
+					],
+					"query": [
+						{
+							"key": "metricSelector",
+							"value": "builtin:host.cpu.system,builtin:host.cpu.user"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6.API v2 - text",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/metrics?fields=metricId&text=cpu",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"metrics"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "metricId"
+						},
+						{
+							"key": "text",
+							"value": "cpu"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7.API v2 -query CPU usage",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/metrics/query?metricSelector=builtin:host.cpu.usage",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"metrics",
+						"query"
+					],
+					"query": [
+						{
+							"key": "metricSelector",
+							"value": "builtin:host.cpu.usage"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8.API v2 -CSV-query CPU usage",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/csv",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/metrics/query?metricSelector=builtin:host.cpu.usage",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"metrics",
+						"query"
+					],
+					"query": [
+						{
+							"key": "metricSelector",
+							"value": "builtin:host.cpu.usage"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9.API v2 - Transformer Max",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/csv",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/metrics/query?metricSelector=builtin:host.cpu.usage:max",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"metrics",
+						"query"
+					],
+					"query": [
+						{
+							"key": "metricSelector",
+							"value": "builtin:host.cpu.usage:max"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10.API v2 - Transformer Max,Min",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/csv",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/metrics/query?metricSelector=builtin:host.cpu.usage:(max,min)",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"metrics",
+						"query"
+					],
+					"query": [
+						{
+							"key": "metricSelector",
+							"value": "builtin:host.cpu.usage:(max,min)"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11.API v2 - 3 hosts highest avg CPU",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/csv",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/metrics/query?metricSelector=builtin:host.cpu.usage:sort(value(avg, descending)):limit(3):fold",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"metrics",
+						"query"
+					],
+					"query": [
+						{
+							"key": "metricSelector",
+							"value": "builtin:host.cpu.usage:sort(value(avg, descending)):limit(3):fold"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12.API v2 - 3 hosts highest avg CPU with Name",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/csv",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/metrics/query?metricSelector=builtin:host.cpu.usage:names:sort(value(avg, descending)):limit(3):fold",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"metrics",
+						"query"
+					],
+					"query": [
+						{
+							"key": "metricSelector",
+							"value": "builtin:host.cpu.usage:names:sort(value(avg, descending)):limit(3):fold"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "13.API v2 - filter by host name",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/csv",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/metrics/query?metricSelector=builtin:host.cpu.usage:avg:names:filter(eq(\"dt.entity.host\",\"HOST-8767D2CDEF1EB801\")):last",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"metrics",
+						"query"
+					],
+					"query": [
+						{
+							"key": "metricSelector",
+							"value": "builtin:host.cpu.usage:avg:names:filter(eq(\"dt.entity.host\",\"HOST-8767D2CDEF1EB801\")):last"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "14.API v2 - filter with entitySelector",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/csv",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/metrics/query?metricSelector=builtin:host.cpu.usage:avg:names:filter(eq(\"dt.entity.host\",\"HOST-8767D2CDEF1EB801\")):last",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"metrics",
+						"query"
+					],
+					"query": [
+						{
+							"key": "metricSelector",
+							"value": "builtin:host.cpu.usage:avg:names:filter(eq(\"dt.entity.host\",\"HOST-8767D2CDEF1EB801\")):last"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "15.API v2 - List entity and OS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/entities?entitySelector=TYPE(\"HOST\")&fields=properties.osType",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"entities"
+					],
+					"query": [
+						{
+							"key": "entitySelector",
+							"value": "TYPE(\"HOST\")"
+						},
+						{
+							"key": "fields",
+							"value": "properties.osType"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "16.API v2 - Filter by tag",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/entities?entitySelector=TYPE(\"HOST\"),tag(Environment:Test)",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"entities"
+					],
+					"query": [
+						{
+							"key": "entitySelector",
+							"value": "TYPE(\"HOST\"),tag(Environment:Test)"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "17.API v2 - List entity types",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/entityTypes",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"entityTypes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "18.API v2 - entitySelector EC2 name and Local IP",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/entities?entitySelector=TYPE(\"EC2_INSTANCE\")&fields=properties.localHostName,properties.localIP",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"entities"
+					],
+					"query": [
+						{
+							"key": "entitySelector",
+							"value": "TYPE(\"EC2_INSTANCE\")"
+						},
+						{
+							"key": "fields",
+							"value": "properties.localHostName,properties.localIP"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "19.API v2 -  CPU usage for host with tag",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/metrics/query?metricSelector=builtin:host.cpu.usage&entitySelector=TYPE(\"HOST\"),tag(\"Environment:Test\")",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"metrics",
+						"query"
+					],
+					"query": [
+						{
+							"key": "metricSelector",
+							"value": "builtin:host.cpu.usage"
+						},
+						{
+							"key": "entitySelector",
+							"value": "TYPE(\"HOST\"),tag(\"Environment:Test\")"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "20.API v2 -  CPU usage for host with tag",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/metrics/query?metricSelector=builtin:host.cpu.usage:filter(in(\"dt.entity.host\",entitySelector(\"TYPE(HOST),tag(Environment:Test)\")))",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"metrics",
+						"query"
+					],
+					"query": [
+						{
+							"key": "metricSelector",
+							"value": "builtin:host.cpu.usage:filter(in(\"dt.entity.host\",entitySelector(\"TYPE(HOST),tag(Environment:Test)\")))"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(extra)21.API v2 - Namespace labels that  from K8s cluster",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Api-Token {{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/entities?entitySelector=type(cloud_application_namespace),toRelationships.isCloudConfigOfNamespace(type(KUBERNETES_CLUSTER),entityName.equals(<k8sclustername>))&fields=+properties.cloudApplicationLabels",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"entities"
+					],
+					"query": [
+						{
+							"key": "entitySelector",
+							"value": "type(cloud_application_namespace),toRelationships.isCloudConfigOfNamespace(type(KUBERNETES_CLUSTER),entityName.equals(<k8sclustername>))"
+						},
+						{
+							"key": "fields",
+							"value": "+properties.cloudApplicationLabels"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
